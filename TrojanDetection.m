@@ -1,16 +1,11 @@
-
-A=(99/100)*(max(Counter1));
-A1=(99/100)*(max(Counter2));
-k=0;
-l=0;
-z=0;
-v=0;
-n=0;
-a=0;
-%-------C&P1--------%
+A1=(99/100)*(max(Counter1));
+A2=(99/100)*(max(Counter2));
+A3=(99/100)*(max(Counter3));
+k=0;l=0;z=0;v=0;n=0;a=0;
+%---------C&P1----------%
 
 for i=1:size(Counter1,1)
-    if(A(2)<(Counter1(i,2)))
+    if(A1(2)<(Counter1(i,2)))
         k=k+1;
         B(k)= i;
     end
@@ -21,10 +16,10 @@ for j=1:length(B)
     C(j)= Processor1(v,2);
 end
 
-%---------C&P2-------%
+%----------C2&P2---------%
 
 for z=1:size(Counter2,1)
-    if(A(2)<(Counter2(z,2)))
+    if(A2(2)<(Counter2(z,2)))
         l=l+1; 
         B2(l)= z;
     end
@@ -35,10 +30,10 @@ for y=1:length(B2)
     C2(y)= Processor2(m,2);
 end
 
-%---------C&P3--------%
+%----------C3&P3---------%
 
 for b=1:size(Counter3,1)
-    if(A(2)<(Counter3(z,2)))
+    if(A3(2)<(Counter3(z,2)))
         a=a+1; 
         B3(a)= b;
     end
@@ -49,17 +44,23 @@ for h=1:length(B2)
     C3(h)= Processor3(q,2);
 end
 
-%-----Subtractions-----%
+%-------Subtractions------%
 
 for n=1:1100
    R1(n) = C2(n)- C(n);
 end
 
 for n=1:1100
-   R2(n) = C(n)- C3(n);
+   R2(n) = C3(n)- C(n);
 end
 
 for n=1:1100
-   R3(n) = C2(n)- C3(n);
+   R3(n) = C3(n)- C2(n);
 end
 
+%----------Plot----------%
+
+t=1:1100;
+plot(t,R1,'m',t,R2,'k',t,R3,'g');
+ylabel('Temperature(F)');
+legend('P2-P1','P3-P1','P3-P2','Location','northoutside','Orientation','horizontal');
