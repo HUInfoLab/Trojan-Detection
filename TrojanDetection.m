@@ -1,7 +1,9 @@
+
 A1=(99/100)*(max(Counter1));
 A2=(99/100)*(max(Counter2));
 A3=(99/100)*(max(Counter3));
 k=0;l=0;z=0;v=0;n=0;a=0;
+
 %---------C&P1----------%
 
 for i=1:size(Counter1,1)
@@ -46,21 +48,21 @@ end
 
 %-------Subtractions------%
 
-for n=1:1100
+for n=1:655
    R1(n) = C2(n)- C(n);
 end
 
-for n=1:1100
+for n=1:655
    R2(n) = C3(n)- C(n);
 end
 
-for n=1:1100
+for n=1:655
    R3(n) = C3(n)- C2(n);
 end
 
 %----------Plot----------%
 
-t=1:1100;
+t=1:655;
 plot(t,R1,'m',t,R2,'k',t,R3,'g');
 ylabel('Temperature(F)');
 legend('P2-P1','P3-P1','P3-P2','Location','northoutside','Orientation','horizontal');
