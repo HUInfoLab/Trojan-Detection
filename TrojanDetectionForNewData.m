@@ -292,7 +292,7 @@ for y=1:179
 end
 
 
-%------------Self-ReferenceDifferenceOne----------%
+%------------Self-ReferenceDifferenceTwo----------%
 
 
 for sub2=1:119
@@ -374,6 +374,7 @@ MinRES=min(RES);
 MeanRES=mean(RES);
 VarRES=var(RES);
 
+%----------------------Plot---------------------------%
 
 subplot(2,2,2)
 t=1:3305;
